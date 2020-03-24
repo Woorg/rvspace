@@ -1,0 +1,148 @@
+
+.form
+  &__row
+    display: flex
+    flex-wrap: wrap
+    &:last-child
+      margin-bottom: 0
+
+  &__field
+    margin-bottom: 20px
+    width: 100%
+    display: flex
+    +mq($medium)
+      margin-right: 30px
+      max-width: 250px
+
+
+    &:nth-child(2n)
+      margin-right: 0
+
+    &:nth-child(1)
+      +r($medium)
+        order: 0
+    &:nth-child(2)
+      +r($medium)
+        order: 1
+    &:nth-child(3)
+      +r($medium)
+        order: 2
+    &:nth-child(4)
+      +r($medium)
+        margin-top: 20px
+        order: 4
+
+    // &:last-child
+    // +mq($small)
+
+
+  &__label
+    position: relative
+    display: flex
+    flex-grow: 1
+
+  &__label-text
+    position: absolute
+    top: 50%
+    left: 24px
+    padding-right: 24px
+    color: rgba(51, 204, 102, 0.7)
+    font-size: 12px
+    font-weight: 300
+    transform: translateY(-50%)
+
+  &__label-note
+    color: #f26a76
+    font-family: $r
+    font-size: 10px
+    font-weight: 300
+    vertical-align: top
+
+  &__input
+    +resetbutton
+    padding-right: 24px
+    padding-left: 24px
+    width: 100%
+    height: 50px
+    background-color: #ffffff
+    line-height: 40px
+    border-radius: 50px
+    font-size: 12px
+    font-weight: 300
+    line-height: 40px
+    text-align: center
+    +placeholder
+      color: rgba(51, 204, 102, 0.7)
+      font-size: 12px
+      font-weight: 300
+      line-height: 40px
+    +mq($medium)
+      height: 40px
+      text-align: left
+
+  &__submit
+    flex-grow: 1
+    text-align: center
+    order: 4
+
+
+  &__privacy
+    margin: auto
+    max-width: 274px
+    width: 100%
+    align-items: flex-start
+    color: #ffffff
+    font-size: 12px
+    font-weight: 500
+    order: 3
+    +mq($medium)
+      align-items: center
+      font-size: 9px
+      max-width: 100%
+
+
+  &__privacy-checkbox
+    position: relative
+    appearance: none
+    &:after,
+    &:before
+      position: absolute
+      top: 3px
+      left: 0
+      content: ""
+      width: 10px
+      height: 10px
+      +mq($medium)
+        top: 50%
+        transform: translateY(-50%)
+    &:after
+      background: url('../images/general/checkbox.svg')
+
+    &:before
+      background: url('../images/general/checked.svg')
+      opacity: 0
+
+    &:checked
+      &:before
+        z-index: 1
+        opacity: 1
+  &__privacy-text
+    margin-left: 25px
+    line-height: 1.3
+
+
+
+.form_theme_popup
+  color: #333333
+  .form__field
+    margin-right: 0
+    max-width: 100%
+  .form__input
+    border: 1px solid #989898
+
+  .form__privacy-text
+    margin-left: 26px
+    color: #333333
+
+  .form__submit
+    margin-top: 30px
